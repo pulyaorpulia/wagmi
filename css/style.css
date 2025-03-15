@@ -1,0 +1,376 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Body styling with gradient */
+body {
+    color: #ffffff;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Navbar styling */
+/* Navbar (Neon effekt) */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Section styling */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Hero section */
+#home {
+    position: relative;
+}
+
+.contract-box {
+    background: rgba(0, 255, 255, 0.15); /* Cyber cyan yaltirash effekti */
+    padding: 2rem; /* Kengroq padding */
+    border-radius: 20px; /* Kamroq egilgan burchaklar */
+    margin-top: 3rem; /* Yuqoridan masofa */
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Ichidagi elementlar orasidagi masofa */
+    max-width: 600px; /* Maksimal kenglik */
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgba(0, 255, 255, 0.5); /* Neon ramka */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Neon yoritish */
+    position: relative;
+    animation: flicker 1.5s infinite alternate; /* Yaltirash animatsiyasi */
+}
+
+/* Cyberpunk effektli yaltirash */
+@keyframes flicker {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+}
+
+.copy-btn {
+    background: #ff0095; /* Cyberpunk neon pushti */
+    border: 2px solid #ff00ff; /* Neon hoshiyasini qo‘shish */
+    padding: 0.8rem 1.5rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Neon effekt */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tugma hover effekti */
+.copy-btn:hover {
+    background: #ff00ff;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 1);
+    transform: scale(1.1); /* Katta ko‘rinish effekti */
+}
+
+/* Tugma yaltirashi */
+.copy-btn::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.3), rgba(0, 0, 0, 0));
+    transition: 0.6s;
+}
+
+.copy-btn:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* Social buttons */
+.social-buttons {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    transition: transform -0.5s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Tokenomics Section */
+.tokenomics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.token-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Progress bar */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress {
+    height: 100%;
+    background: #4CAF50;
+    width: 60%;
+}
+
+
+.background-video {
+    position: fixed; /* Skroll qilinganda joyida qoladi */
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100vw; /* Ekran to‘liq qoplanishi uchun */
+    min-height: 100vh; /* Barcha ekranlarni qoplash uchun */
+    transform: translate(-50%, -50%); /* Videoni markazga joylash */
+    object-fit: cover; /* Videoni ekranga to‘g‘ri moslash */
+    z-index: -1; /* Kontent videoning ustida chiqishi uchun */
+    overflow: hidden; /* Ortib qoladigan qismlar yashirin bo‘lishi uchun */
+}
+
+
+/* --- H2: Cyberpunk neon effektli sarlavha --- */
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(183, 227, 227); /* Neon cyan rang */
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff; /* Neon effekt */
+    padding-bottom: 50px;
+    letter-spacing: 8px;
+    text-align: center;
+    position: relative;
+    animation: glow 0.1s infinite alternate;
+}
+
+/* --- P: Futuristik matn dizayni --- */
+p {
+    font-size: 1rem;
+    color: rgb(183, 227, 227); /* Neon cyan rang */
+    text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff; /* Neon effekt */
+    line-height: 2;
+    text-align: center;
+    position: relative;
+    letter-spacing: 2px;
+    max-width: 600px; /* Maksimal kenglik qo‘shildi */
+    margin: 0 auto; /* Markazga joylash */
+}
+
+/* Neon yaltirash animatsiyasi */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff;
+    }
+    100% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 30px #0ff;
+    }
+}
+
+h1 {
+    font-size: 1.5rem; /* Katta sarlavha */
+    font-family: "Audiowide", sans-serif; /* Futuristik shrift */
+    color: #ff007f; /* Neon pushti rang */
+    text-transform: uppercase; /* Katta harflar */
+    text-align: center;
+    letter-spacing: 4px; /* Harflar orasidagi masofa */
+    position: relative;
+    animation: neonGlow 0.1s infinite alternate;
+    text-shadow: 
+        0 0 10px #ff007f, 
+        0 0 20px #ff00ff, 
+        0 0 40px #ff007f, 
+        0 0 80px #ff007f;
+}
+
+
+
+/* Neon yaltirash animatsiyasi */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 
+            0 0 5px #ff007f, 
+            0 0 10px #ff00ff, 
+            0 0 20px #ff007f;
+    }
+    100% {
+        text-shadow: 
+            0 0 10px #ff007f, 
+            0 0 20px #ff00ff, 
+            0 0 30px #ff007f;
+    }
+}
+
+#howtobuy {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #00ffea; /* Neon cyan */
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin-bottom: 2rem;
+}
+
+.tokenomics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.token-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.token-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+}
+
+h3 {
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.token-name {
+    color: #ff0095;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0095;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0); /* Qoramtir fon */
+    color: #0ff; /* Neon cyan */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-family: "Orbitron", sans-serif;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #00f;
+    z-index: 1000;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: url('https://wagmiai.site/staticfiles/img/background.jpg') no-repeat center center/cover;
+}
+
+.hero h1 {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 80%;
+    color: white;
+}
+
+/* Mobil qurilmalar uchun moslashtirilgan CSS */
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 1.5rem;
+        max-width: 50%; /* Elementning kengligini cheklash */
+        padding: 0 10px; /* Chetlar bo'yicha padding qo'shish */
+        word-wrap: break-word;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .tokenomics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #about p {
+        font-size: 0.9rem; /* Mobilda shriftni biroz kichikroq qilish */
+        line-height: 1.5; /* Qatorlar orasidagi masofani kamaytirish */
+        max-width: 100%; /* Mobilda to'liq kenglikni egallash */
+        padding: 0 10px; /* Mobilda chetlar bo'yicha paddingni kamaytirish */
+        overflow-wrap: break-word; /* Uzun so'zlarni avtomatik ravishda qatorlarga bo'lish */
+    }
+}
+
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Token Name</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <img class="background-video" src="img/p.jpg" alt="Background Image">
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>WAGMI AI</h1>
+        <div class="contract-box">
+            <span id="contractAddress">35RFumAb3R5HVhg7gVG4RBkqTB5NfCnzNkyq9GeLmoon</span>
+            <button class="copy-btn" onclick="copyAddress()">Copy CA</button>
+        </div>
+        <div class="social-buttons">
+            <a href="https://t.me/WAGMI_AI_solana" class="social-btn" style="background: #0088cc;">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://x.com/WagmiAI_solana" class="social-btn" style="background: #000;">
+                <i class="fab fa-twitter"></i> X.com
+            </a>
+            <a href="https://dexscreener.com/solana/35rfumab3r5hvhg7gvg4rbkqtb5nfcnznkyq9gelmoon" class="social-btn" style="background: #000000;">
+                <i class="fas fa-chart-line"></i> DexScreener
+            </a>
+            <a href="https://dexscreener.com/solana/35rfumab3r5hvhg7gvg4rbkqtb5nfcnznkyq9gelmoon" class="social-btn" style="background: #928911;">
+                <i class="fas fa-rocket"></i> Moonshot
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Contract address copy function
+        function copyAddress() {
+            const address = document.getElementById('contractAddress').innerText;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(address).then(function() {
+                    console.log("Copied to clipboard!");
+                }).catch(function(err) {
+                    console.error("Failed to copy: ", err);
+                });
+            } else {
+                // Eski usul (textarea yordamida)
+                const textarea = document.createElement("textarea");
+                textarea.value = address;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+                console.log("Copied to clipboard!");
+            }
+
+            // Temporarily change the button text to "Copied!"
+            const btn = document.querySelector('.copy-btn');
+            btn.innerText = 'Copied!';
+            setTimeout(() => {
+                btn.innerText = 'Copy CA';
+            }, 2000);
+        }
+    </script>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>WAGMI AI</h2>
+        <p>WAGMI YOUR TRADING STRATEGY!
+            Thousands of tokens are created, rug-pulled, and we don't have time 
+                to review even the most basic information before buying, information that could be the key to deciding whether or not to invest in a token. 
+                WAGMI AI aims to provide that security, with reliable, real-time data.
+        </p>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section id="howtobuy">
+        <h2>Unique Features</h2>
+        <div class="tokenomics-grid">
+            <div class="token-box">
+                <h3>Secure & Decentralized</h3>
+                <p>Powered by blockchain technology, ensuring transparency and security.</p>
+                <p>Powered by blockchain technology, ensuring transparency and security.</p>
+            </div>
+            <div class="token-box">
+                <h3>Community-Driven</h3>
+                <p>The coin is fully owned by the community, no centralized control.</p>
+            </div>
+            <div class="token-box">
+                <h3>High-Speed Transactions</h3>
+                <p>Lightning-fast and low-cost transactions on our scalable network</span>.</p>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics">
+        <h2>Tokenomics</h2>
+        <div class="tokenomics-grid">
+            <div class="token-box">
+                <h3>Total Supply</h3>
+                <p>1,000,000,000</p>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Statics Section -->
+<section id="links">
+    <h2>Moonshot Statistics</h2>
+    <canvas id="moonshotChart"></canvas>
+</section>
+
+<!-- Chart.js kutubxonasini yuklash -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Diagramma ma'lumotlari
+    const ctx = document.getElementById('moonshotChart').getContext('2d');
+    const moonshotChart = new Chart(ctx, {
+        type: 'line', // Chiziqli diagramma
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Oylik statistika
+            datasets: [{
+                label: 'Moonshot Price ($)',
+                data: [0.02, 0.05, 0.08, 0.15, 0.12, 0.20], // Narxlar o'zgarishi
+                borderColor: '#00ffff', // Neon cyan
+                backgroundColor: 'rgba(0, 255, 255, 0.1)', // Yaltirash effekti
+                borderWidth: 2,
+                pointBackgroundColor: '#ff00ff', // Nuqtalar neon pushti
+                pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: '#ffffff' } // Oq rangda yozuvlar
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { color: '#ffffff' },
+                    grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                },
+                y: {
+                    ticks: { color: '#ffffff' },
+                    grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                }
+            }
+        }
+    });
+</script>
+
+<style>
+    /* Statics bo'limi styling */
+    #links {
+        padding: 100px 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.249);
+        border-radius: 20px;
+        box-shadow: 0 0 15px #00ffff;
+    }
+    
+    #links h2 {
+        font-size: 2.5rem;
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    }
+    
+    #moonshotChart {
+        max-width: 800px;
+        max-height: 400px;
+        margin: auto;
+    }
+</style>
+
+
+<footer class="footer">
+    <p>© 2025 WAGMI AI | All Rights Reserved</p>
+</footer>
+
+    <!-- Link to the JavaScript file -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
