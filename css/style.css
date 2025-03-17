@@ -164,18 +164,15 @@ section {
 
 
 .background-video {
-    position: fixed; /* Skroll qilinganda joyida qoladi */
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    min-width: 100vw; /* Ekran to‘liq qoplanishi uchun */
-    min-height: 100vh; /* Barcha ekranlarni qoplash uchun */
-    transform: translate(-50%, -50%); /* Videoni markazga joylash */
-    object-fit: cover; /* Videoni ekranga to‘g‘ri moslash */
-    z-index: -1; /* Kontent videoning ustida chiqishi uchun */
-    overflow: hidden; /* Ortib qoladigan qismlar yashirin bo‘lishi uchun */
-}
+    position: fixed; /* Video ekranda harakatlanmasligi uchun */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Video kichrayib bo‘lsa ham, kesilmay to‘liq chiqishi uchun */
+    background: black; /* Agar video ekran to‘liq qoplanmasa, qora fon chiqadi */
+    z-index: -1; /* Kontent ustida chiqishi uchun */
+}   
 
 
 /* --- H2: Cyberpunk neon effektli sarlavha --- */
